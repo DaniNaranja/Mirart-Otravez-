@@ -9,12 +9,6 @@
 }
 
 
-html, body{
-    margin: 0;
-    height: 100%;
-    width: 100%;
-    padding: 0;
-}
 html{
     font-size: 62.5%;
     box-sizing: border-box;
@@ -25,16 +19,17 @@ html{
   }
 
 body{
-    font-size: 16px; /* 1 rem= 10px  */
+    font-size: 1.6rem; /* 1 rem= 10px  */
     font-family: 'Alata', sans-serif;
     background-color: #1F1414;
     z-index: 1;
 }
 
+
 h1{
     color: #FFFFFF;
     font-weight:100;
-    font-size: 3.5rem;
+    font-size: 4rem;
 }
 h2 {
     font-size: 3rem;
@@ -55,30 +50,26 @@ h3 {
     text-align: start;
     text-decoration: none;
     font-size: 2rem;
-    padding-top: 5px;
-    padding-left: 5px;
+    padding-top: 0.5rem;
+    padding-left: 0.5rem;
     z-index: 2;
     
      
 }
 .titulo{
-    padding-top: 15px;
+    padding-top: 1.5rem;
 }
 
 .logo{
-    padding-top: 8px;
-    padding-right: 10px;
-    padding-left: 5px;
+    padding: 0.8rem;
 }
 /*-------------------HAMBURGER DROPDOWN---------------*/
 ul, ol {
     list-style:none;
 }
 .nav{
-    margin-left: 150rem;
-    margin-top: -3px;
-    background-color: black;
-
+    margin-left: 85%;
+    margin-top: -0.3rem;
 }
 
 .nav > li {
@@ -87,10 +78,10 @@ ul, ol {
 }
 
 .nav li a {
-    background-color:#271E1E;
+    background-color: #000000;
     color:#fff;
     text-decoration:none;
-    padding:10px 12px;
+    padding:1rem 1.2rem;
     display:block;
 }
 
@@ -101,11 +92,13 @@ ul, ol {
 .nav li ul {
     display:none;
     position:absolute;
-    min-width:140px;
+    min-width:14rem;
 }
 
 .nav li:hover > ul {
     display:block;
+    position:relative;
+    
 }
 
 .nav li ul li {
@@ -113,9 +106,19 @@ ul, ol {
 }
 
 .nav li ul li ul {
-    right:-140px;
-    top:0px;
+    right:-14rem;
+    top:0rem;
 }
+
+@media (min-width: 768px) {
+    .nav{
+        margin-left: auto;
+    }
+    
+}
+
+
+
 
 
 
@@ -131,7 +134,7 @@ ul, ol {
     bottom: 0;
     position: absolute;
     width: auto;
-   max-height: available;
+   max-height:auto;
 
 }
 
@@ -150,15 +153,22 @@ ul, ol {
     left: 2rem;
 }
 
+.sidebar a.active-page{
+    background-color:#46352C;
+    padding: 1rem 2rem;
+    
+}
+
+
 /*--------------CONTENIDO--------------------*/
 
 .content{
-    margin-left: 110px;
-    margin-top: 6rem;
+    margin-left: 5%;
+    margin-top: 5%;
     padding-top: 20px;
     background-color: #000000;
     width: 100%;
-    max-height: fit-content;  
+    height: max-content 
     
 }
 
@@ -195,11 +205,11 @@ a{
     color: #FFFFFF;
 
 }
-a:hover{
-    color: #92672e;
+.content a:hover{
+    color: #c2975f;
 }
 
-a.active{
+.content a.active{
     background-color: #92672e;
 }
   
@@ -223,29 +233,13 @@ a.active{
   }
   
   /* Position the image container (needed to position the left and right arrows) */
-  .gallery {
-    position: relative;
-  }
+ 
   
-  /* Hide the images by default */
-  .mySlides {
-    display: none;
-  }
   
   /* Add a pointer when hovering over the thumbnail images */
   .cursor {
     cursor: pointer;
   }
-  
-  
-  
-  
-  /* On hover, add a black background color with a little bit see-through */
-  .prev:hover,
-  .next:hover {
-    background-color: rgba(0, 0, 0, 0.8);
-  }
-  
 
   
   /* Six columns side by side */
@@ -264,6 +258,9 @@ a.active{
     opacity: 1;
   }
 
+
+  
+
  /*-------------PERFIL-------------*/
 
  /* The hero image */
@@ -281,9 +278,9 @@ a.active{
   }
   
   .hero-content {
-    text-align:justify;
+    text-align:start;
     position: absolute;
-    top: 28%;
+    top: 30%;
     left: 22%;
     transform: translate(-50%, -50%);
     color: white;
@@ -337,19 +334,121 @@ a.active{
     
     text-align: center;
 }
+
+.boton:hover{
+    background-color: #814f33;
+    cursor: pointer;
+}
 /*-----------------VISOR-------------------*/
 
 .visor-content{
-    margin-top: 12rem;
-    margin-left: 12rem;
+    margin-top: 5%;
+    margin-left: 5%;
     background-color: #000000;
-    max-height: fit-content;
+    height: 118.5rem;
+    
 }
 .visor-image{
-    margin-left: 40px;
+    margin-left: 2%;
+    margin-top: 2%;
+    
     display: flex;
    
 }
+
+/*=================COMISIONES=====================*/
+
+.commissions{
+    margin-left: 5%;
+    margin-top: 5%;
+    
+    background-color: #000000;
+    width: 100%;
+    height: max-content 
+    
+}
+
+.hero-image-comm {
+    /* Use "linear-gradient" to add a darken background effect to the image (photographer.jpg). This will make the text easier to read */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+  
+    
+    /* Position and center the image to scale nicely on all screens */
+    background-position: left;
+    background-repeat: no-repeat;
+    background-size: cover;
+   
+    
+  }
+  
+  .hero-content-comm {
+    text-align:start;
+    position: absolute;
+    top: 18%;
+    left: 18%;
+    transform: translate(-50%, -50%);
+    color: white;
+     
+  }
+
+  .hero-text-comm{
+      display: inline-block;
+      font-size: 4rem;
+      margin-left: 40px;
+  }
+    .tos-text, .comm-list{
+        box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+    }
+
+  .commissions-content{
+      font-size: 3rem;
+      color: #cab395;
+      text-align: justify;
+      position: relative;
+      
+      
+  }
+
+  .tos-text{
+     width: 100rem; 
+     
+  }
+
+  
+  .comm-list{
+      width: 60%;
+      margin-left: 10%;
+      margin-top: 6%;
+     
+      
+  }
+
+  .comm-type{
+      background-color:#271E1E;
+      width: 40%; 
+      padding: 10% 40%;  
+      border-radius: 20px;
+  }
+
+  .comm-type:hover{
+      background-color: #633e28;
+  }
+
+  .comm-type img{
+      margin-left: 50%;
+  }
+
+  
+  
+
+
+
+
+
+
+
 
 
 

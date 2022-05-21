@@ -31,7 +31,9 @@
             </div>
 
         
+            
             <ul class="nav">
+				
 				<li><a href=""><img class="hamburger-icon" src="img/Menu icon.png" alt=""></a>
 					<ul>
 						<li><a href="login.html">Iniciar Sesion</a></li>
@@ -41,7 +43,10 @@
 						</li>
 					</ul>
 				</li>
-			</ul> 
+				
+			</ul>
+        
+            
         </nav>   
     </header>
 
@@ -51,7 +56,7 @@
                 <img src="img/HOME icon.png" alt="">
             </a>
             
-            <a href="highlights.html">
+            <a href="highlights.html" class="active-page">
                 <img src="img/HIGHLIGHTS icon.png" alt="">
             </a>
            
@@ -69,41 +74,40 @@
         </div> 
     </div>  
     
-    <section class="visor-content" style="width: auto ;">
-        <div class="visor-image">
-             <img src="img/LOGO.png" style="width: 50%;" alt=""> 
+    <section class="content" style="width: auto ; height: 118.5rem;">
+        <h2 style="color: white; margin-left: 2%;">Crear comision</h2>
 
-             <div class="visor-info">
-                 <br>
-                <h2 style="color: white; font-size: 50px; margin-left: 5%;">TITULO</h2>
-                
-                <br> <br>
-                
-                <a href="profile.html">
-                     <img src="img/PROFILE.png" style="vertical-align: middle; margin-left: 5%; width: 8%;">
-                     <span style="margin-left: 2%; font-size: 2.5rem;"> Nombre Usuario</span> 
-                </a>
-                
-                <div class="desc-dibu" style="margin-top: 5%; margin-left:5%">
-                    <p class="descripcion" style="width: 100rem; height: 45rem;  background-color: #271E1E; padding: 5%">Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                        Duis scelerisque luctus nisl, non lobortis ante cursus ut. 
-                        Fusce rhoncus, neque in placerat ornare, sapien dolor tincidunt est, ac viverra ex tellus eu dolor. 
-                        Morbi luctus erat sed posuere dignissim. Integer a elit eu est laoreet tristique. Curabitur pretium felis orci, a sodales tortor pretium vitae. 
-                        Nulla luctus dapibus mi, id porttitor urna. Vivamus mollis risus eu lorem interdum tristique. Nam congue diam sit amet ligula tincidunt, eget lobortis sapien ultrices. 
-                        Cras porttitor non odio vitae scelerisque. Vivamus scelerisque mi sit amet aliquet lobortis. In aliquam sem in nulla pharetra, ut semper ligula venenatis. 
-                    </p>
-                </div>
-            </div>
-             
+        <form action="/action_page.php" style="color:aliceblue; margin-left: 2%;">
+            <br>
+            
+
+            <label for="lname" style="font-size: 2.5rem;">Nombre/Tipo:</label><br><br>
+            <input type="text" id="user" name="user" style="padding: 1rem; border-radius: 1.5rem; background-color: #b89e77ec; width: 70%; padding: 2rem; font-size: 25px;">
+            <br>
+            <br>
+            <br>
+            <label for="lname" style="font-size: 2.5rem;">Precio:</label><br><br>
+            <input type="number" id="price" name="price" min="1" max="9999999" style="padding: 1rem; border-radius: 1.5rem; background-color: #b89e77ec; width: 15%; padding: 2rem; font-size: 25px;">
+            <br>
+            <br>
+            <label for="lname" style="font-size: 2.5rem;">Descripcion:</label><br><br>
+            <textarea name="desc" id="" cols="100" rows="10" style="background-color: #b89e77ec; border-radius: 1.5rem; width: 70%;"></textarea>
+            <br>
+            <br>
+            <label for="lname" style="font-size: 2.5rem;">Ejemplo:</label><br><br>
+            <input type="file" id="sample" name="sample" style="padding: 1rem; border-radius: 1.5rem; background-color: #b89e77ec; width: 15%; padding: 2rem; font-size: 25px;">
+        </form>
+        <br>
+        <br>
+        <br>
+        <div class="boton" style="margin-left: 60%; font-size: 30px; width: fit-content; margin-left: 57%;">
+            <a class="b-crearcomm" style="vertical-align: middle;" href="comisiones.html">Crear comision</a>
         </div>
-
         
-      
+     
         
 
     </section>
-    
-    
 
     <script src="js/script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>

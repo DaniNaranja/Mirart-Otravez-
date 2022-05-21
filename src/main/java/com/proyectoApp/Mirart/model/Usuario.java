@@ -30,7 +30,7 @@ public class Usuario {
     private String password;
 
     @Column(name="profile_picture", columnDefinition="TEXT")
-    private String profiePicture;
+    private String profilePicture;
 
 
 
@@ -50,12 +50,12 @@ public class Usuario {
         this.password = password;
     }
 
-    public String getProfiePicture() {
-        return profiePicture;
+    public String getProfilePicture() {
+        return profilePicture;
     }
 
-    public void setProfiePicture(String profiePicture) {
-        this.profiePicture = profiePicture;
+    public void setProfilePicture(String profiePicture) {
+        this.profilePicture = profilePicture;
     }
 
     public Long getId_usuario() {
@@ -89,6 +89,8 @@ public class Usuario {
     public void setPassword(String password) {
         this.password = password;
     }
+
+
 
 
 }

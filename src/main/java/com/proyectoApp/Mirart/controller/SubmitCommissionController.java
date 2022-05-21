@@ -5,10 +5,11 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
-public class CommissionsController {
+public class SubmitCommissionController {
 
-    @GetMapping("/commissions")
-    public String commissions(){
-        return "commissions";
+
+    @GetMapping("/submit_commission")
+    public String submitCommission(){
+        return "submit_commission";
     }
 }

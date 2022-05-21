@@ -21,29 +21,26 @@
 </head>
 <body>
     <header>
-        <nav class="nav-principal-contenedor sticky" style="height: 8rem;">
+        <nav class="nav-principal-contenedor sticky" style="height: 100px;">
            
-            <a href="/">
+            <a href="index.html">
                 <img src="img/LOGO.png" alt="" class="logo">
             </a>
             <div class="titulo">
             <h1 >Mirart</h1>
             </div>
 
-        
             
-            <ul class="nav">
-				<li><a href=""><img class="hamburger-icon" src="img/Menu icon.png" alt=""></a>
-					<ul>
-						<li><a href="/login">Iniciar Sesion</a></li>
-						<li><a href="/register">Registrarse</a></li>
-						
-							
-						</li>
-					</ul>
-				</li>
-				
-			</ul>
+            
+             <ul class="nav">
+				      <li><a href=""><img class="hamburger-icon" src="img/Menu icon.png" alt=""></a>
+					      <ul>
+						      <li><a href="login.html">Iniciar Sesion</a></li>
+						      <li><a href="registro.html">Registrarse</a></li>
+					      </ul>
+				      </li>
+					  </ul>     
+            
         
             
         </nav>   
@@ -51,44 +48,54 @@
 
     <div class="sidebar sticky" style="width: 100px;">
         <div class="sidebar-content">
-            <a href="/">
+            <a href="index.html" class="active-page">
                 <img src="img/HOME icon.png" alt="">
             </a>
             
-            <a href="/highlights">
+            <a href="highlights.html">
                 <img src="img/HIGHLIGHTS icon.png" alt="">
             </a>
            
-            <a href="/profile">
+            <a href="profile.html">
                 <img src="img/PROFILE.png" alt="">
             </a>
+            <a href="submit_drawing.html" alt="">
+                <img src="/img/add ICON.png" alt="">
+            </a>
             
-            <a href="/" class="sb-faq">
+            <a href="#" class="sb-faq">
                 <img src="img/FAQ.png" alt="">
             </a>
+
+            
         </div> 
     </div>  
     
-    <section class="content" style="width: auto ;">
+    <section class="content" style="width: auto ; margin-top: 5%;">
         <section class="inicio-profile">
-            <img src="img/profilephoto.png">
+          <a href="profile.html">
+                <img src="img/PROFILE.png" alt="" style="width: 10%;">     
+          </a>
+            
             <div class="info-user">
                 
                 <div class="inicio-rrss">
                     <li>
-                        <a href="/profile">
+                        <a href="profile.html">
                             <h3>Nombre artista</h3>
                             <br>
                         </a>
                         <a href="#">
-                           <img src="img/IG icon.png" style="height: 40px; vertical-align: middle">
+                           <img src="img/IG icon.png" style="height: 40px; vertical-align: middle"> 
                            <span>Instagram</span>
                         </a>
+                        <br>
                         <br>
                         <a href="#">
                             <img src="img/TW icon.png" style="height: 40px; vertical-align: middle">
                             <span>Twitter</span>
                         </a>
+                        <br>
                         <br>
                         
                         <a href="#">
@@ -103,40 +110,42 @@
         <div class="gallery">
             <div class="row">
               <div class="column">
-                <a href="/visor">
-                    <img class="demo cursor" src="img/LOGO.png" style="width:100%" onclick="currentSlide(6)" >
+                <a href="visor.html">
+                    <img class="demo cursor" src="img/LOGO.png" style="width:100%; padding: 2rem;"  >
                   </a>
               </div>
+
               <div class="column">
-                  <a href="/visor">
-                    <img class="demo cursor" src="img/LOGO.png" style="width:100%" onclick="currentSlide(6)" >
+                <a href="visor.html">
+                    <img class="demo cursor" src="img/LOGO.png" style="width:100%; padding: 2rem;"  >
                   </a>
               </div>
+
               <div class="column">
-                  <a href="/visor">
-                    <img class="demo cursor" src="img/LOGO.png" style="width:100%" onclick="currentSlide(6)" >
+                <a href="visor.html">
+                    <img class="demo cursor" src="img/LOGO.png" style="width:100%; padding: 2rem;"  >
                   </a>
               </div>
+
               <div class="column">
-                  <a href="/visor">
-                    <img class="demo cursor" src="img/LOGO.png" style="width:100%" onclick="currentSlide(6)" >
+                <a href="visor.html">
+                    <img class="demo cursor" src="img/LOGO.png" style="width:100%; padding: 2rem;"  >
                   </a>
               </div>
+
               <div class="column">
-                  <a href="/visor">
-                    <img class="demo cursor" src="img/LOGO.png" style="width:100%" onclick="currentSlide(6)" >
+                <a href="visor.html">
+                    <img class="demo cursor" src="img/LOGO.png" style="width:100%; padding: 2rem;"  >
                   </a>
               </div>
+
               <div class="column">
-                  <a href="/visor">
-                    <img class="demo cursor" src="img/LOGO.png" style="width:100%" onclick="currentSlide(6)" >
+                <a href="visor.html">
+                    <img class="demo cursor" src="img/LOGO.png" style="width:100%; padding: 2rem;"  >
                   </a>
-                
               </div>
-            </div>
+            </div>  
         </div>
-
-
     </section>
 
     <script src="js/script.js"></script>

@@ -1,0 +1,197 @@
+:root{
+    --blanco: #FFFFFF;
+    --oscuro: #000000;
+    --cafe: #1F1414;
+    --secundario:#583f31;
+    --terciario:#C5C0A2 ;
+
+    --fuente-principal: 3.8rem
+}
+
+
+
+
+html{
+    font-size: 62.5%;
+    box-sizing: border-box;
+    display: block;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+  }
+
+body{
+    font-size: 1.6rem; /* 1 rem= 10px  */
+    font-family: 'Alata', sans-serif;
+    background-image: url(../img/fondo.png);
+    background-size: cover;
+    background-position-y: 60px;
+}
+
+h1{
+    color: #FFFFFF;
+    font-weight:100;
+    font-size: 4rem;
+}
+h2 {
+    font-size: 3rem;
+}
+h3 {
+    font-size: 2.5rem;
+    color: #FFFFFF;
+    font-weight: 400;
+
+}
+
+
+
+.nav-principal-contenedor{
+    display: flex;
+    flex-direction: row;
+    background-color: var(--oscuro);
+    text-align: start;
+    text-decoration: none;
+    font-size: 2rem;
+    padding-top: 0.5rem;
+    padding-left: 0.5rem;
+    z-index: 2;
+    
+     
+}
+.titulo{
+    padding-top: 1.5rem;
+}
+
+.logo{
+    padding: 0.8rem;
+}
+
+
+
+ /*-------------PERFIL-------------*/
+
+ /* The hero image */
+.hero-image {
+    /* Use "linear-gradient" to add a darken background effect to the image (photographer.jpg). This will make the text easier to read */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+  
+    
+    /* Position and center the image to scale nicely on all screens */
+    background-position: left;
+    background-repeat: no-repeat;
+    background-size: cover;
+   
+    
+  }
+  
+  .hero-content {
+    text-align:justify;
+    position: absolute;
+    top: 28%;
+    left: 22%;
+    transform: translate(-50%, -50%);
+    color: white;
+     
+  }
+
+  .hero-text{
+      display: inline-block;
+      font-size: 4rem;
+      margin-left: 40px;
+  }
+
+  .hero-text h1{
+      font-size: 6rem;
+  }
+  
+
+  .textbox{
+    margin-left: 30px;
+    display: flex;
+    flex-direction: row;
+    margin-top: -30px;
+  }
+.descripcion{
+    font-size: 25px;
+    text-align: justify;
+    color: #FFFFFF;
+    
+}
+
+.profile-rrss{
+    margin-left: 3%;
+    vertical-align: middle;
+    margin-top: 30px;
+    font-size: 35px;
+}
+
+.boton{
+    
+    background-color: #312323;
+    color:var(--blanco);
+    padding: 2rem 3rem;
+    margin-top: 1rem;
+    font-size: 4rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    width: 300px;
+    height: 100px;
+    
+    border-radius: 1.5rem;
+    
+    text-align: center;
+}
+
+
+/*=================LOGIN=====================*/
+
+
+
+.boton-login{
+    
+    background-color: var(--secundario);
+   
+    padding: 1rem 2rem;
+
+    font-size: 3rem;
+    width: 30%;
+    height: 10%;
+    border-radius: 1.5rem;
+    text-align: center;
+    
+}
+
+.boton-login a{
+    color:var(--blanco);
+    text-decoration: none;
+}
+
+.boton-login:hover{
+    background-color: #97653c;
+    cursor: pointer;
+}
+
+input[type=radio] {
+    border: 0px;
+    width: 8%;
+    height: 3rem;
+    vertical-align: middle;
+}
+
+
+
+  
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+

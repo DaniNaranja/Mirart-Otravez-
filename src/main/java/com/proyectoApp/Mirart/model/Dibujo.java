@@ -16,7 +16,7 @@ public class Dibujo {
     @Column(name = "descripcion", nullable = false, length=100)
     private String descripcion;
 
-    @Column(name = "link", nullable = false, length=200)
+    @Column(name = "link", nullable = false, columnDefinition="TEXT")
     private String link;
 
     @ManyToOne
@@ -66,4 +66,11 @@ public class Dibujo {
         this.link = link;
     }
 
+    public Artista getArtista() {
+        return artista;
+    }
+
+    public void setArtista(Artista artista) {
+        this.artista = artista;
+    }
 }

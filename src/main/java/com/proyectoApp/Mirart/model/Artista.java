@@ -1,6 +1,7 @@
 package com.proyectoApp.Mirart.model;
 import javax.persistence.*;
 import javax.persistence.Entity;
+import java.util.Set;
 
 
 @Entity
@@ -20,6 +21,34 @@ public class Artista {
     @Column(name = "password", nullable = false, length = 100)
     private String password;
 
+    @Column(name="profile_picture", columnDefinition="TEXT")
+    private String profilePicture;
+
+    @Column(name="banner_picture", columnDefinition="TEXT")
+    private String bannerPicture;
+
+    @Column(name = "link_ig", nullable = true, length = 300)
+    private String linkIG;
+
+    @Column(name = "link_fb", nullable = true, length = 300)
+    private String linkFB;
+
+    @Column(name = "link_tw", nullable = true, length = 300)
+    private String linkTW;
+
+    @Column(name = "link_waitlist", nullable = true, length = 400)
+    private String linkWaitlist;
+
+    @Column(name = "verif_acc", nullable = false)
+    private boolean verifAcc;
+
+    @Column(name = "terms", nullable = true, length = 600)
+    private String terms;
+
+    @OneToMany(mappedBy = "artista")
+    private Set<Dibujo> dibujos;
+
+
 
     public Artista(Long id_artista, String nickname, String email, String password) {
         this.id_artista = id_artista;
@@ -30,6 +59,78 @@ public class Artista {
     public Artista() {
     }
 
+
+    public String getProfilePicture() {
+        return profilePicture;
+    }
+
+    public void setProfilePicture(String profilePicture) {
+        this.profilePicture = profilePicture;
+    }
+
+    public String getBannerPicture() {
+        return bannerPicture;
+    }
+
+    public void setBannerPicture(String bannerPicture) {
+        this.bannerPicture = bannerPicture;
+    }
+
+    public String getLinkIG() {
+        return linkIG;
+    }
+
+    public void setLinkIG(String linkIG) {
+        this.linkIG = linkIG;
+    }
+
+    public String getLinkFB() {
+        return linkFB;
+    }
+
+    public void setLinkFB(String linkFB) {
+        this.linkFB = linkFB;
+    }
+
+    public String getLinkTW() {
+        return linkTW;
+    }
+
+    public void setLinkTW(String linkTW) {
+        this.linkTW = linkTW;
+    }
+
+    public String getLinkWaitlist() {
+        return linkWaitlist;
+    }
+
+    public void setLinkWaitlist(String linkWaitlist) {
+        this.linkWaitlist = linkWaitlist;
+    }
+
+    public boolean isVerifAcc() {
+        return verifAcc;
+    }
+
+    public void setVerifAcc(boolean verifAcc) {
+        this.verifAcc = verifAcc;
+    }
+
+    public String getTerms() {
+        return terms;
+    }
+
+    public void setTerms(String terms) {
+        this.terms = terms;
+    }
+
+    public Set<Dibujo> getDibujos() {
+        return dibujos;
+    }
+
+    public void setDibujos(Set<Dibujo> dibujos) {
+        this.dibujos = dibujos;
+    }
 
     public Long getId_artista() {
         return id_artista;

@@ -10,24 +10,25 @@ public class Comision {
     @Column(name = "id_comision", nullable = false)
     private Long idComision;
 
-    @ManyToOne
-    @JoinColumn(name = "id_tipo_comision")
-    private TipoComision tipoComision;
-
+    @Column(name = "nombre", nullable = false, length = 100)
+    private String nombre;
     @Column(name = "descripcion", nullable = false)
     private String descripcion;
 
     @Column(name = "precio", nullable = false)
     private int precio;
 
+    @Column(name="comm_sample", columnDefinition="TEXT", nullable = false)
+    private String commSample;
+
 
 
     public Comision() {
     }
 
-    public Comision(Long idComision, TipoComision tipoComision, String descripcion, int precio) {
+    public Comision(Long idComision,String nombre, String descripcion, int precio) {
         this.idComision = idComision;
-        this.tipoComision = tipoComision;
+        this.nombre = nombre;
         this.descripcion = descripcion;
         this.precio = precio;
     }
@@ -40,12 +41,12 @@ public class Comision {
         this.idComision = idComision;
     }
 
-    public TipoComision getTipoComision() {
-        return tipoComision;
+    public String getNombre() {
+        return nombre;
     }
 
-    public void setTipoComision(TipoComision tipoComision) {
-        this.tipoComision = tipoComision;
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 
     public String getDescripcion() {
@@ -62,5 +63,13 @@ public class Comision {
 
     public void setPrecio(int precio) {
         this.precio = precio;
+    }
+
+    public String getCommSample() {
+        return commSample;
+    }
+
+    public void setCommSample(String commSample) {
+        this.commSample = commSample;
     }
 }
