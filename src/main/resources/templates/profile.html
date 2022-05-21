@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -30,8 +30,8 @@
                             
 				      <li><a href=""><img class="hamburger-icon" src="img/Menu icon.png" alt=""></a>
 					      <ul>
-						      <li><a href="login.html">Iniciar Sesion</a></li>
-						      <li><a href="registro.html">Registrarse</a></li>
+						      <li><a href="/login">Iniciar Sesion</a></li>
+						      <li><a href="/registro">Registrarse</a></li>
 					      </ul>
 				      </li>
 			</ul>     
@@ -44,23 +44,23 @@
     
         <div class="sidebar sticky" style="width: 100px;">
             <div class="sidebar-content">
-                <a href="index.html">
+                <a href="/">
                     <img src="img/HOME icon.png" alt="">
                 </a>
                 
-                <a href="highlights.html">
+                <a href="/highlights">
                     <img src="img/HIGHLIGHTS icon.png" alt="">
                 </a>
                
-                <a href="profile.html" class="active-page">
+                <a href="/profile" class="active-page">
                     <img src="img/PROFILE.png" alt="">
                 </a>
 
-                <a href="submit_drawing.html" alt="">
+                <a href="/submit_drawing" alt="">
                     <img src="/img/add ICON.png" alt="">
                 </a>
                 
-                <a href="#" class="sb-faq">
+                <a href="/" class="sb-faq">
                     <img src="img/FAQ.png" alt="">
                 </a>
 
@@ -97,111 +97,42 @@
 
                         <li class="profile-rrss">
                     
-                            <a href="#" ">
+                            <a href="/">
                             <img src="img/IG icon.png" style="height: 50px; vertical-align: middle"> 
                             <span>Instagram</span>
                             </a>
                             <br>
                             <br>
-                            <a href="#">
+                            <a href="/">
                                 <img src="img/TW icon.png" style="height: 50px; vertical-align: middle">
                                 <span>Twitter</span>
                             </a>
                             <br>
                             <br>
                         
-                            <a href="#">
+                            <a href="/">
                                 <img src="img/FB icon.png" style="height: 70px; vertical-align: middle"> 
                                 <span>Facebook</span> 
                             </a>
                         </li>
                         <div class="boton" style="margin-left: 15%;">
-                            <a class="b-comision" style="vertical-align: middle;" href="comisiones.html">Comisiones</a>
+                            <a class="b-comision" style="vertical-align: middle;" href="/comisiones">Comisiones</a>
                         </div>
                         <div class="boton" style="margin-left: 2rem;">                           
-                            <a class="b-waitlist" style="vertical-align: middle;" href="#">Waitlist</a>
+                            <a class="b-waitlist" style="vertical-align: middle;" href="/">Waitlist</a>
 
                         </div>
                  </div>
-                 
-                 <div class="profile-gallery">
-                     
-                    <div class="row">
-                      <div class="column">
-                        <a href="visor.html">
-                            <img class="demo cursor" src="img/LOGO.png" style="width:100%" onclick="currentSlide(6)" >
-                          </a>
-                      </div>
-                      <div class="column">
-                        <a href="visor.html">
-                            <img class="demo cursor" src="img/LOGO.png" style="width:100%" onclick="currentSlide(6)" >
-                          </a>
-                      </div>
-                      <div class="column">
-                        <a href="visor.html">
-                            <img class="demo cursor" src="img/LOGO.png" style="width:100%" onclick="currentSlide(6)" >
-                          </a>
-                      </div>
-                      <div class="column">
-                        <a href="visor.html">
-                            <img class="demo cursor" src="img/LOGO.png" style="width:100%" onclick="currentSlide(6)" >
-                          </a>
-                      </div>
-                      <div class="column">
-                        <a href="visor.html">
-                            <img class="demo cursor" src="img/LOGO.png" style="width:100%" onclick="currentSlide(6)" >
-                          </a>
-                      </div>
-                      <div class="column">
-                          <a href="visor.html">
-                            <img class="demo cursor" src="img/LOGO.png" style="width:100%" onclick="currentSlide(6)" >
-                          </a>
-                      </div>
-                      <div class="column">
-                        <a href="visor.html">
-                          <img class="demo cursor" src="img/LOGO.png" style="width:100%" onclick="currentSlide(6)" >
-                        </a>
+                     <div class="profile-gallery">
+
+                        <div class="row">
+                          <div class="column">
+                            <a href="/visor">
+                                <img class="demo cursor" src="img/LOGO.png" style="width:100%" >
+                              </a>
+                          </div>
+                        </div>
                     </div>
-                    <div class="column">
-                        <a href="visor.html">
-                          <img class="demo cursor" src="img/LOGO.png" style="width:100%" onclick="currentSlide(6)" >
-                        </a>
-                    </div>
-                    <div class="column">
-                        <a href="visor.html">
-                          <img class="demo cursor" src="img/LOGO.png" style="width:100%" onclick="currentSlide(6)" >
-                        </a>
-                    </div>
-                    <div class="column">
-                        <a href="visor.html">
-                          <img class="demo cursor" src="img/LOGO.png" style="width:100%" onclick="currentSlide(6)" >
-                        </a>
-                    </div>
-                    <div class="column">
-                        <a href="visor.html">
-                          <img class="demo cursor" src="img/LOGO.png" style="width:100%" onclick="currentSlide(6)" >
-                        </a>
-                    </div>
-                    <div class="column">
-                        <a href="visor.html">
-                          <img class="demo cursor" src="img/LOGO.png" style="width:100%" onclick="currentSlide(6)" >
-                        </a>
-                    </div>
-                    <div class="column">
-                        <a href="visor.html">
-                          <img class="demo cursor" src="img/LOGO.png" style="width:100%" onclick="currentSlide(6)" >
-                        </a>
-                    </div>
-                     <div class="column">
-                          <a href="visor.html">
-                            <img class="demo cursor" src="img/LOGO.png" style="width:100%" onclick="currentSlide(6)" >
-                          </a>
-                      </div>
-                    
-    
-                      
-                    </div>
-                </div>
      
             </section>
 

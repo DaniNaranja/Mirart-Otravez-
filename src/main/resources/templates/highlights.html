@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -23,7 +23,7 @@
     <header>
         <nav class="nav-principal-contenedor sticky" style="height: 100px;">
            
-            <a href="index.html">
+            <a href="/">
                 <img src="img/LOGO.png" alt="" class="logo">
             </a>
             <div class="titulo">
@@ -36,8 +36,8 @@
 				
 				<li><a href=""><img class="hamburger-icon" src="img/Menu icon.png" alt=""></a>
 					<ul>
-						<li><a href="login.html">Iniciar Sesion</a></li>
-						<li><a href="registro.html">Registrarse</a></li>
+						<li><a href="/login">Iniciar Sesion</a></li>
+						<li><a href="/registro">Registrarse</a></li>
 						
 							
 						</li>
@@ -52,19 +52,19 @@
 
     <div class="sidebar sticky" style="width: 100px;">
         <div class="sidebar-content">
-            <a href="index.html">
+            <a href="/">
                 <img src="img/HOME icon.png" alt="">
             </a>
             
-            <a href="highlights.html" class="active-page">
+            <a href="/highlights" class="active-page">
                 <img src="img/HIGHLIGHTS icon.png" alt="">
             </a>
            
-            <a href="profile.html">
+            <a href="/profile">
                 <img src="img/PROFILE.png" alt="">
             </a>
             
-            <a href="submit_drawing.html" alt="">
+            <a href="/submit_drawing" alt="">
               <img src="/img/add ICON.png" alt="">
           </a>
             <a href="#" class="sb-faq">
@@ -79,32 +79,32 @@
         <div class="gallery">
             <div class="row">
               <div class="column">
-                <a href="visor.html">
+                <a href="/visor">
                     <img class="demo cursor" src="img/LOGO.png" style="width:100%" onclick="currentSlide(6)" >
                   </a>
               </div>
               <div class="column">
-                <a href="visor.html">
+                <a href="/visor">
                     <img class="demo cursor" src="img/LOGO.png" style="width:100%" onclick="currentSlide(6)" >
                   </a>
               </div>
               <div class="column">
-                <a href="visor.html">
+                <a href="/visor">
                     <img class="demo cursor" src="img/LOGO.png" style="width:100%" onclick="currentSlide(6)" >
                   </a>
               </div>
               <div class="column">
-                <a href="visor.html">
+                <a href="/visor">
                     <img class="demo cursor" src="img/LOGO.png" style="width:100%" onclick="currentSlide(6)" >
                   </a>
               </div>
               <div class="column">
-                <a href="visor.html">
+                <a href="/visor">
                     <img class="demo cursor" src="img/LOGO.png" style="width:100%" onclick="currentSlide(6)" >
                   </a>
               </div>
               <div class="column">
-                  <a href="visor.html">
+                  <a href="/visor">
                     <img class="demo cursor" src="img/LOGO.png" style="width:100%" onclick="currentSlide(6)" >
                   </a>
                 
@@ -112,74 +112,7 @@
             </div>
         </div>
         
-        <div class="gallery">
-            <div class="row">
-              <div class="column">
-                <img class="demo cursor" src="img/LOGO.png" style="width:100%" onclick="currentSlide(1)" alt="The Woods">
-              </div>
-              <div class="column">
-                <img class="demo cursor" src="img/LOGO.png" style="width:100%" onclick="currentSlide(2)" alt="Cinque Terre">
-              </div>
-              <div class="column">
-                <img class="demo cursor" src="img/LOGO.png" style="width:100%" onclick="currentSlide(3)" alt="Mountains and fjords">
-              </div>
-              <div class="column">
-                <img class="demo cursor" src="img/LOGO.png" style="width:100%" onclick="currentSlide(4)" alt="Northern Lights">
-              </div>
-              <div class="column">
-                <img class="demo cursor" src="img/LOGO.png" style="width:100%" onclick="currentSlide(5)" alt="Nature and sunrise">
-              </div>
-              <div class="column">
-                <img class="demo cursor" src="img/LOGO.png" style="width:100%" onclick="currentSlide(6)" alt="Snowy Mountains">
-              </div>
-            </div>
-          </div>
-      
-        <div class="gallery">
-            <div class="row">
-              <div class="column">
-                <img class="demo cursor" src="img/LOGO.png" style="width:100%" onclick="currentSlide(1)" alt="The Woods">
-              </div>
-              <div class="column">
-                <img class="demo cursor" src="img/LOGO.png" style="width:100%" onclick="currentSlide(2)" alt="Cinque Terre">
-              </div>
-              <div class="column">
-                <img class="demo cursor" src="img/LOGO.png" style="width:100%" onclick="currentSlide(3)" alt="Mountains and fjords">
-              </div>
-              <div class="column">
-                <img class="demo cursor" src="img/LOGO.png" style="width:100%" onclick="currentSlide(4)" alt="Northern Lights">
-              </div>
-              <div class="column">
-                <img class="demo cursor" src="img/LOGO.png" style="width:100%" onclick="currentSlide(5)" alt="Nature and sunrise">
-              </div>
-              <div class="column">
-                <img class="demo cursor" src="img/LOGO.png" style="width:100%" onclick="currentSlide(6)" alt="Snowy Mountains">
-              </div>
-            </div>
-          </div>
-       
-        <div class="gallery">
-            <div class="row">
-              <div class="column">
-                <img class="demo cursor" src="img/LOGO.png" style="width:100%" onclick="currentSlide(1)" alt="The Woods">
-              </div>
-              <div class="column">
-                <img class="demo cursor" src="img/LOGO.png" style="width:100%" onclick="currentSlide(2)" alt="Cinque Terre">
-              </div>
-              <div class="column">
-                <img class="demo cursor" src="img/LOGO.png" style="width:100%" onclick="currentSlide(3)" alt="Mountains and fjords">
-              </div>
-              <div class="column">
-                <img class="demo cursor" src="img/LOGO.png" style="width:100%" onclick="currentSlide(4)" alt="Northern Lights">
-              </div>
-              <div class="column">
-                <img class="demo cursor" src="img/LOGO.png" style="width:100%" onclick="currentSlide(5)" alt="Nature and sunrise">
-              </div>
-              <div class="column">
-                <img class="demo cursor" src="img/LOGO.png" style="width:100%" onclick="currentSlide(6)" alt="Snowy Mountains">
-              </div>
-            </div>
-          </div>
+
         
 
     </section>

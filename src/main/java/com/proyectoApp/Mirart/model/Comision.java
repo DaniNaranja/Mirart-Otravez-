@@ -21,6 +21,10 @@ public class Comision {
     @Column(name="comm_sample", columnDefinition="TEXT", nullable = false)
     private String commSample;
 
+    @ManyToOne
+    @JoinColumn(name= "id_artista")
+    private Artista artista;
+
 
 
     public Comision() {

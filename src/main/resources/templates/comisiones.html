@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -18,7 +18,7 @@
         <header>
             <nav class="nav-principal-contenedor sticky" style="height: 100px;">
                
-                <a href="index.html">
+                <a href="/">
                     <img src="img/LOGO.png" alt="" class="logo">
                 </a>
                 <div class="titulo">
@@ -31,8 +31,8 @@
                     
                     <li><a href=""><img class="hamburger-icon" src="img/Menu icon.png" alt=""></a>
                         <ul>
-                            <li><a href="login.html">Iniciar Sesion</a></li>
-                            <li><a href="registro.html">Registrarse</a></li>
+                            <li><a href="/login">Iniciar Sesion</a></li>
+                            <li><a href="/registro">Registrarse</a></li>
                             
                                 
                             </li>
@@ -47,23 +47,23 @@
     
         <div class="sidebar sticky" style="width: 100px;">
             <div class="sidebar-content">
-                <a href="index.html">
+                <a href="/">
                     <img src="img/HOME icon.png" alt="">
                 </a>
                 
-                <a href="highlights.html">
+                <a href="/highlights">
                     <img src="img/HIGHLIGHTS icon.png" alt="">
                 </a>
                
-                <a href="profile.html" class="active-page">
+                <a href="/profile" class="active-page">
                     <img src="img/PROFILE.png" alt="">
                 </a>
 
-                <a href="submit_drawing.html" alt="">
+                <a href="/submit_drawing" alt="">
                     <img src="/img/add ICON.png" alt="">
                 </a>
                 
-                <a href="#" class="sb-faq">
+                <a href="/" class="sb-faq">
                     <img src="img/FAQ.png" alt="">
                 </a>
             </div> 
@@ -74,7 +74,7 @@
         <div class="hero-image-comm">
             <img src="img/fondo.png" style="width: 250rem; height: 20rem; object-fit: cover;">
             <div class="hero-content-comm">
-                <a href="profile.html">
+                <a href="/profile">
                     <img src="img/PROFILE.png" class="profile-photo" style="height: 150px; width: 150px; vertical-align: middle; ">
                     <div class="hero-text-comm" style="vertical-align: middle;">
                     <span>Nombre Usuario</span>
@@ -102,35 +102,12 @@
                 </div>
 
                 <div class="comm-list">
-                    <a href="submit_commission.html">
+                    <a href="/submit_commission">
                         <div class="comm-type" style="width:30%">
                             <img src="img/add ICON.png" alt="">   
                         </div>
                     </a>
                     <br>
-                    <a href="submit_commission.html">
-                        <div class="comm-type" style="width:30%">
-                            <img src="img/add ICON.png" alt="">   
-                        </div>
-                    </a>
-                    <br>
-                    <a href="submit_commission.html">
-                        <div class="comm-type" style="width:30%">
-                            <img src="img/add ICON.png" alt="">   
-                        </div>
-                    </a>
-                    <br>
-                    <a href="submit_commission.html">
-                        <div class="comm-type" style="width:30%">
-                            <img src="img/add ICON.png" alt="">   
-                        </div>
-                    </a>
-                    <br>
-                    <a href="submit_commission.html">
-                        <div class="comm-type" style="width:30%">
-                            <img src="img/add ICON.png" alt="">   
-                        </div>
-                    </a>
                 </div>
             </section>
 

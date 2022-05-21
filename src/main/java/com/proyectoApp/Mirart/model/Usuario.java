@@ -32,6 +32,15 @@ public class Usuario {
     @Column(name="profile_picture", columnDefinition="TEXT")
     private String profilePicture;
 
+    @Column(name="banner_picture", columnDefinition="TEXT")
+    private String bannerPicture;
+
+    @Column(name = "verif_acc", nullable = false)
+    private boolean verifAcc;
+
+    @Column(name = "descripcion", nullable = true, length = 300)
+    private String descripcion;
+
 
 
     public Usuario() {
@@ -48,6 +57,31 @@ public class Usuario {
     public Usuario(String nickname, String password) {
         this.nickname = nickname;
         this.password = password;
+    }
+
+
+    public String getDescripcion() {
+        return descripcion;
+    }
+
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
+    }
+
+    public String getBannerPicture() {
+        return bannerPicture;
+    }
+
+    public void setBannerPicture(String bannerPicture) {
+        this.bannerPicture = bannerPicture;
+    }
+
+    public boolean isVerifAcc() {
+        return verifAcc;
+    }
+
+    public void setVerifAcc(boolean verifAcc) {
+        this.verifAcc = verifAcc;
     }
 
     public String getProfilePicture() {

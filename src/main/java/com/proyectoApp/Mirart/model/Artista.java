@@ -45,8 +45,14 @@ public class Artista {
     @Column(name = "terms", nullable = true, length = 600)
     private String terms;
 
+    @Column(name = "descripcion", nullable = true, length = 300)
+    private String descripcion;
+
     @OneToMany(mappedBy = "artista")
     private Set<Dibujo> dibujos;
+
+    @OneToMany(mappedBy = "artista")
+    private Set<Comision> comisiones;
 
 
 
@@ -59,6 +65,22 @@ public class Artista {
     public Artista() {
     }
 
+
+    public String getDescripcion() {
+        return descripcion;
+    }
+
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
+    }
+
+    public Set<Comision> getComisiones() {
+        return comisiones;
+    }
+
+    public void setComisiones(Set<Comision> comisiones) {
+        this.comisiones = comisiones;
+    }
 
     public String getProfilePicture() {
         return profilePicture;
