@@ -74,33 +74,41 @@
         </div> 
     </div>  
     
-    <section class="content" style="width: auto ; height: 118.5rem;">
+    <section class="content" style="margin-top:5% ;margin-left: 5% ;width: auto ; height: 118.5rem;">
         <h2 style="color: white; margin-left: 2%;">Subir dibujo</h2>
 
-        <form action="/action_page.php" style="color:aliceblue; margin-left: 2%;">
+        <form th:action="@{/form_drawing}" th:object="${dibujo}" method="post" style="color:aliceblue; margin-left: 2%;">
             <br>
-            
 
             <label for="titulo" style="font-size: 2.5rem;">Titulo:</label><br><br>
-            <input type="text" id="titulo" name="titulo" style="padding: 1rem; border-radius: 1.5rem; background-color: #b89e77ec; width: 70%; padding: 2rem; font-size: 25px;">
+
+            <input th:field="*{titulo}" type="text" id="titulo" name="titulo" style="padding: 1rem; border-radius: 1.5rem; background-color: #b89e77ec; width: 70%; padding: 2rem; font-size: 25px;">
             <br>
             <br>
             <br>
           
             <label for="descripcion" style="font-size: 2.5rem;">Descripcion:</label><br><br>
-            <textarea name="descripcion" id="descripcion" cols="100" rows="10" style="background-color: #b89e77ec; border-radius: 1.5rem; width: 70%;"></textarea>
+            <textarea th:field="*{descripcion}" name="descripcion" id="descripcion" cols="100" rows="10" style="background-color: #b89e77ec; font-size: 25px;border-radius: 1.5rem; width: 70%;"></textarea>
             <br>
             <br>
-            <label for="link" style="font-size: 2.5rem;">Archivo:</label><br><br>
-            <input type="file" id="link" name="link" style="padding: 1rem; border-radius: 1.5rem; background-color: #b89e77ec; width: 15%; padding: 2rem; font-size: 25px;">
+            <label for="link" style="font-size: 2.5rem;">Link imagen:</label><br><br>
+            <input th:field="*{link}" type="text" id="link" name="link" style="padding: 1rem; border-radius: 1.5rem; background-color: #b89e77ec; width: 15%; padding: 2rem; font-size: 25px;">
+
+            <input type="hidden" th:field="*{id_dibujo}">
+
+
+            <br>
+            <br>
+            <br>
+            <input type="submit" class="boton" value="Subir" style="margin-left: 58%; font-size: 30px; width: fit-content; padding-left: 4%; padding-right: 4%;">
         </form>
         <br>
         <br>
         <br>
         <a class="b-crearcomm" style="vertical-align: middle;" href="/visor">
-        <div class="boton" style="margin-left: 58%; font-size: 30px; width: fit-content; padding-left: 4%; padding-right: 4%;">
-            <span>Subir</span> 
-        </div>
+
+
+
         </a>
      
         

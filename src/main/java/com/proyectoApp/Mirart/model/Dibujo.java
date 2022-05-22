@@ -34,6 +34,12 @@ public class Dibujo {
         this.link = link;
     }
 
+    @PrePersist
+    public void prePersist(){
+        artista=null;
+
+    }
+
     public Long getId_dibujo() {
         return id_dibujo;
     }

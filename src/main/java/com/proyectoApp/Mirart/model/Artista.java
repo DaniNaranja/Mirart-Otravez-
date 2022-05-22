@@ -1,6 +1,7 @@
 package com.proyectoApp.Mirart.model;
 import javax.persistence.*;
 import javax.persistence.Entity;
+import java.util.List;
 import java.util.Set;
 
 
@@ -21,7 +22,7 @@ public class Artista {
     @Column(name = "password", nullable = false, length = 100)
     private String password;
 
-    @Column(name="profile_picture", columnDefinition="TEXT")
+    @Column(name="profile_picture", nullable = true, length = 400)
     private String profilePicture;
 
     @Column(name="banner_picture", columnDefinition="TEXT")
@@ -39,7 +40,7 @@ public class Artista {
     @Column(name = "link_waitlist", nullable = true, length = 400)
     private String linkWaitlist;
 
-    @Column(name = "verif_acc", nullable = false)
+    @Column(name = "verif_acc", nullable = true)
     private boolean verifAcc;
 
     @Column(name = "terms", nullable = true, length = 600)
@@ -63,6 +64,20 @@ public class Artista {
         this.password = password;
     }
     public Artista() {
+    }
+
+    @PrePersist
+    public void prePersist(){
+        bannerPicture=null;
+        linkIG=null;
+        linkFB=null;
+        linkTW=null;
+        verifAcc=true;
+        terms=null;
+        descripcion=null;
+        dibujos= null;
+        comisiones= null;
+
     }
 
 

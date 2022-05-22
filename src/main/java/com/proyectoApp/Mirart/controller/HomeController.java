@@ -1,5 +1,6 @@
 package com.proyectoApp.Mirart.controller;
 
+import com.proyectoApp.Mirart.model.Artista;
 import com.proyectoApp.Mirart.repository.ArtistaRepository;
 import com.proyectoApp.Mirart.repository.DibujoRepository;
 import com.proyectoApp.Mirart.repository.UsuarioRepository;
@@ -12,19 +13,23 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class HomeController {
 
     @Autowired
-    private UsuarioRepository usuario;
+    private UsuarioRepository usuarioRepository;
 
     @Autowired
-    private ArtistaRepository artista;
+    private ArtistaRepository artistaRepository;
 
     @Autowired
-    private DibujoRepository dibujo;
+    private DibujoRepository dibujoRepository;
 
     @GetMapping("/")
-    public String index(Model model){
-
+    public String index(Model model, Artista artista){
+        Iterable<Artista> artistas= artistaRepository.findAll();
+        model.addAttribute("artistas",artistas);
+        model.addAttribute("artista", new Artista());
         return "index";
     }
+
+
 
 
 

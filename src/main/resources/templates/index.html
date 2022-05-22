@@ -66,83 +66,59 @@
             
         </div> 
     </div>  
-    
-    <section class="content" style="width: auto ; margin-top: 5%;">
-        <section class="inicio-profile">
-          <a href="/profile">
-                <img src="img/PROFILE.png" alt="" style="width: 10%;">     
-          </a>
-            
-            <div class="info-user">
-                
-                <div class="inicio-rrss">
-                    <li>
-                        <a href="/profile">
-                            <h3>Nombre artista</h3>
+
+    <div th:if="${artistas.isEmpty()}">
+        <span style="margin-top: 50%; margin-left: 50%">No se encuentran usuarios</span>
+
+    </div>
+    <div style="margin-top: 5%;  margin-left: 5%;">
+        <section th:if="${!artistas.isEmpty()}" th:each="artista : ${artistas}" class="inicio-content" style="width: 100%; padding: 10px; background-color: #000000 ">
+            <section class="inicio-profile">
+                <a th:href="@{/profile(id_artista=${artista.getId_artista()})}">
+                    <div>
+                        <img th:src="${artista.getProfilePicture()}" alt="" style="; border-radius: 10px">
+                    </div>
+
+                </a>
+
+                <div class="info-user">
+
+                    <div class="inicio-rrss">
+                        <li>
+                            <a th:href="@{/profile(id_artista=${artista.getId_artista()})}">
+                                <h3 th:text="${artista.getNickname()}"></h3>
+                                <br>
+                            </a>
+                            <a th:href="${artista.getLinkIG()}">
+                                <img src="img/IG icon.png" style="height: 40px; vertical-align: middle">
+                                <span>Instagram</span>
+                            </a>
                             <br>
-                        </a>
-                        <a href="/">
-                           <img src="img/IG icon.png" style="height: 40px; vertical-align: middle"> 
-                           <span>Instagram</span>
-                        </a>
-                        <br>
-                        <br>
-                        <a href="/">
-                            <img src="img/TW icon.png" style="height: 40px; vertical-align: middle">
-                            <span>Twitter</span>
-                        </a>
-                        <br>
-                        <br>
-                        
-                        <a href="/">
-                            <img src="img/FB icon.png" style="height: 40px; vertical-align: middle"> 
-                            <span>Facebook</span> 
-                        </a>
-                    </li>
-                    
+                            <br>
+                            <a th:href="${artista.getLinkTW()}">
+                                <img src="img/TW icon.png" style="height: 40px; vertical-align: middle">
+                                <span>Twitter</span>
+                            </a>
+                            <br>
+                            <br>
+
+                            <a th:href="${artista.getLinkFB()}">
+                                <img src="img/FB icon.png" style="height: 40px; vertical-align: middle">
+                                <span>Facebook</span>
+                            </a>
+                        </li>
+
+                    </div>
                 </div>
-            </div>
+            </section>
+
         </section>
-        <div class="gallery">
-            <div class="row">
-              <div class="column">
-                <a href="/visor">
-                    <img class="demo cursor" src="img/LOGO.png" style="width:100%; padding: 2rem;"  >
-                  </a>
-              </div>
+        <br>
+        <br>
+        <br>
+        <br>
+    </div>
 
-              <div class="column">
-                <a href="/visor">
-                    <img class="demo cursor" src="img/LOGO.png" style="width:100%; padding: 2rem;"  >
-                  </a>
-              </div>
-
-              <div class="column">
-                <a href="/visor">
-                    <img class="demo cursor" src="img/LOGO.png" style="width:100%; padding: 2rem;"  >
-                  </a>
-              </div>
-
-              <div class="column">
-                <a href="/visor">
-                    <img class="demo cursor" src="img/LOGO.png" style="width:100%; padding: 2rem;"  >
-                  </a>
-              </div>
-
-              <div class="column">
-                <a href="/visor">
-                    <img class="demo cursor" src="img/LOGO.png" style="width:100%; padding: 2rem;"  >
-                  </a>
-              </div>
-
-              <div class="column">
-                <a href="/visor">
-                    <img class="demo cursor" src="img/LOGO.png" style="width:100%; padding: 2rem;"  >
-                  </a>
-              </div>
-            </div>  
-        </div>
-    </section>
 
     <script src="js/script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>

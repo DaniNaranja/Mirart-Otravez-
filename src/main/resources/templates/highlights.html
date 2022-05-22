@@ -71,44 +71,26 @@
                 <img src="img/FAQ.png" alt="">
             </a>
         </div> 
-    </div>  
-    
-    <section class="content" style="width: auto ;">
+    </div>
+
+
+
+
+
+    <section class="content"  style="width: auto ;">
         <h2 style="color: white; padding-left: 20px;">Destacados</h2>
-        
-        <div class="gallery">
+        <br>
+        <div class="gallery" th:if="${dibujos.isEmpty()}">
+            <h2 style="color: white">No se encuentran dibujos.</h2>
+        </div>
+
+        <div class="gallery" >
             <div class="row">
-              <div class="column">
-                <a href="/visor">
-                    <img class="demo cursor" src="img/LOGO.png" style="width:100%" onclick="currentSlide(6)" >
-                  </a>
-              </div>
-              <div class="column">
-                <a href="/visor">
-                    <img class="demo cursor" src="img/LOGO.png" style="width:100%" onclick="currentSlide(6)" >
-                  </a>
-              </div>
-              <div class="column">
-                <a href="/visor">
-                    <img class="demo cursor" src="img/LOGO.png" style="width:100%" onclick="currentSlide(6)" >
-                  </a>
-              </div>
-              <div class="column">
-                <a href="/visor">
-                    <img class="demo cursor" src="img/LOGO.png" style="width:100%" onclick="currentSlide(6)" >
-                  </a>
-              </div>
-              <div class="column">
-                <a href="/visor">
-                    <img class="demo cursor" src="img/LOGO.png" style="width:100%" onclick="currentSlide(6)" >
-                  </a>
-              </div>
-              <div class="column">
-                  <a href="/visor">
-                    <img class="demo cursor" src="img/LOGO.png" style="width:100%" onclick="currentSlide(6)" >
-                  </a>
-                
-              </div>
+                <div class="column" th:if="${!dibujos.isEmpty()}" th:each=" dibujo :${dibujos}" >
+                    <a th:href="@{/visor(id_dibujo=${dibujo.getId_dibujo()})}">
+                        <img class="demo cursor" th:src="${dibujo.getLink()}" style="width:100%; padding: 2rem;"  >
+                    </a>
+                </div>
             </div>
         </div>
         

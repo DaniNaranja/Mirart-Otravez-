@@ -34,45 +34,47 @@
     </header>
 
         <div class="contenedor-form" style="background-color: rgba(0,0, 0, 0.7); height: 120.5rem;max-height: 100%; width: 25%; margin-left: 10%;">
-            <form  method="post" style="color:aliceblue; padding-left: 5%;">
+            <form th:action="@{/form_registro}" th:object="${artista}" method="post" style="color:aliceblue; padding-left: 5%;">
                 <br>
                 <label style="font-size: 3rem;">Regístrate</label><br><br>
-    
+
                 <label for="nickname" style="font-size: 2.5rem;">Nombre Usuario:</label><br><br>
-                <input type="text" id="nickname" name="nickname" style="padding: 1rem; border-radius: 1.5rem; background-color: #b89e77ec; width: 90%; padding: 2rem; font-size: 25px;">
+
+                <input  type="text" id="nickname" name="nickname" th:field="*{nickname}" style="padding: 1rem; border-radius: 1.5rem; background-color: #b89e77ec; width: 90%; padding: 2rem; font-size: 25px;">
                 <br>
                 <br>
-                
-                <label for="password" style="font-size: 2.5rem;">Contraseña:</label><br><br>
-                <input type="password"  id="password" name="password" style="padding: 1rem; border-radius: 1.5rem; background-color: #b89e77ec; width: 90%; padding: 2rem; font-size: 25px;">
-                <br>
-                <br>
+
                 <label for="email" style="font-size: 2.5rem;">E-mail:</label><br><br>
-                <input type="email"  id="email" name="email" style="padding: 1rem; border-radius: 1.5rem; background-color: #b89e77ec; width: 90%; padding: 2rem; font-size: 25px;">
+
+                <input type="email"  id="email" name="email" th:field="*{email}" style="padding: 1rem; border-radius: 1.5rem; background-color: #b89e77ec; width: 90%; padding: 2rem; font-size: 25px;">
                 <br>
                 <br>
-                <span style="font-size:2.5rem;">Desea ingresar como cuenta de artista?</span>
+
+                <label for="password" style="font-size: 2.5rem;">Contraseña:</label><br><br>
+
+                <input type="password"  id="password" name="password" th:field="*{password}" style="padding: 1rem; border-radius: 1.5rem; background-color: #b89e77ec; width: 90%; padding: 2rem; font-size: 25px;">
                 <br>
                 <br>
-                <input  type="radio" name="verif_acc" value="1">
-                <label style="font-size: 2.5rem ;">Si</label>
-                <input  type="radio" name="verif_acc" value="0">
-                <label style="font-size: 2.5rem;">No, vengo como cliente</label><br>
-            
-    
+
+
+
+                <input type="hidden" th:field="*{id_artista}">
+
+                <br>
+                <br>
+                <br>
+                <input type="submit" class="boton-login" style="margin-left: 50%; width: 40%;" value="Crear cuenta">
             </form>
             <br>
             <br>
-            
-    
-            <div >
-                <div class="boton-login" style="margin-left: 50%; width: 40%;">
-                    <a type="submit" class="b-registro" style="vertical-align: middle; font-size: 2.5rem;" href="/">Crear cuenta</a>
-                </div>
+
+
+
+
                
                
 
-                </div>
+
                 
                
             </div>

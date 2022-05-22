@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
@@ -32,32 +34,38 @@
             </div>     
         </nav>   
     </header>
-
+        <div class="alert alert-error" role="alert" th:text="${error}" th:if="${error}"></div>
         <div class="contenedor-form" style="background-color: rgba(0,0, 0, 0.7); height: 120.5rem;max-height: 100%; width: 25%; margin-left: 10%;">
-            <form action="" style="color:aliceblue; padding-left: 5%;">
+            <form method="post" th:action="@{/form_login}" th:object="${artista}" style="color:aliceblue; padding-left: 5%;">
                 <br>
                 <label style="font-size: 3rem;">Inicia Sesion</label><br><br>
     
-                <label for="user" style="font-size: 2.5rem;">Nombre Usuario:</label><br><br>
-                <input type="text" id="user" name="nickname" style="padding: 1rem; border-radius: 1.5rem; background-color: #b89e77ec; width: 90%; padding: 2rem; font-size: 25px;">
+                <label for="nickname" style="font-size: 2.5rem;">Nombre Usuario:</label><br><br>
+                <input th:field="*{nickname}" type="text" id="nickname" name="nickname" style="padding: 1rem; border-radius: 1.5rem; background-color: #b89e77ec; width: 90%; padding: 2rem; font-size: 25px;">
                 <br>
                 <br>
                 <br>
                 <label for="password" style="font-size: 2.5rem;">Contraseña:</label><br><br>
-                <input type="password" id="password" name="password" style="padding: 1rem; border-radius: 1.5rem; background-color: #b89e77ec; width: 90%; padding: 2rem; font-size: 25px;">
-             
-    
+                <input th:field="*{password}" type="password" id="password" name="password" style="padding: 1rem; border-radius: 1.5rem; background-color: #b89e77ec; width: 90%; padding: 2rem; font-size: 25px;">
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+
+                <input type="submit" class="boton-login" style="margin-left: 50%; width: 40%;" value="Ingresar">
+
+
             </form>
             <br>
             <br>
             <br>
     
             <div >
-                <div class="boton-login" style="margin-left: 60%;">
-                    <a type="submit" class="b-comision" style="vertical-align: middle;" href="/">Ingresar</a>
-                </div>
+
                
-                <div style="margin-top: 90%;">
+                <div style="margin-top: 70%;">
                     <span style="color: aliceblue; font-size: 2.5rem; margin-left: 5%;">No tienes una cuenta?</span>
                 <div class="boton-login" style="display: inline; margin-left: 3%; padding-bottom: 3%;" >
                     <a type="submit" class="b-comision" style="vertical-align: middle;" href="/registro">Registrate</a>
