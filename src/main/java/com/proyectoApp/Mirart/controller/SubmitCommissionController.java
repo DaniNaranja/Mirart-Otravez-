@@ -13,6 +13,14 @@ public class SubmitCommissionController {
 
     @Autowired
     private ComisionRepository comision;
+
+    /**
+     *
+     * @param model libreria proporcionada por Spring para la creacion
+     *      *       de entidades e insercion de datos a la DB.
+     *
+     * @return devuelve la vista submit_commission
+     */
     @GetMapping("/submit_commission")
     public String submitCommission(Model model){
 

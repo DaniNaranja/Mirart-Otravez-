@@ -21,6 +21,12 @@ public class ProfileController {
     @Autowired
     private DibujoRepository dibujo;
 
+    /**
+     * metodo encargado de mostrar la vista profile
+     * @param model libreria proporcionada por Spring para la creacion
+     *              de entidades e insercion de datos a la DB.
+     * @return devuelve la vista profile
+     */
      @GetMapping("/profile")
     public String profile(Model model){
 

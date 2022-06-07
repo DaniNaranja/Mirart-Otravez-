@@ -55,7 +55,14 @@ public class Artista {
     @OneToMany(mappedBy = "artista")
     private Set<Comision> comisiones;
 
-
+    /**
+     * Constructor de la entidad artista
+     *
+     * @param id_artista id auto incrementable que tambien es PK
+     * @param nickname
+     * @param email
+     * @param password
+     */
 
     public Artista(Long id_artista, String nickname, String email, String password) {
         this.id_artista = id_artista;
@@ -63,9 +70,18 @@ public class Artista {
         this.email = email;
         this.password = password;
     }
+
+    /**
+     * Constructor vacio a ser utilizado por los controllers
+     */
     public Artista() {
     }
 
+    /**
+     * metodo encargado de asignar datos que no son rellenados
+     * inmediatamente en el formulario de registro
+     *
+     */
     @PrePersist
     public void prePersist(){
         bannerPicture=null;

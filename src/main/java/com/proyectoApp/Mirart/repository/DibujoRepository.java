@@ -6,6 +6,9 @@ import org.springframework.data.repository.CrudRepository;
 
 import java.util.List;
 
+/**
+ * Interface que extiende de CrudRepository para manejar datos de la DB
+ */
 public interface DibujoRepository extends CrudRepository<Dibujo, Long> {
 
 

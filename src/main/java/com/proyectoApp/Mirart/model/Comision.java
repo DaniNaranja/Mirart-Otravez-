@@ -26,10 +26,19 @@ public class Comision {
     private Artista artista;
 
 
-
+    /**
+     * Constructor vacio a ser utilizado por los controllers
+     */
     public Comision() {
     }
 
+    /**
+     * Constructor de la entidad Comision
+     * @param idComision id auto incrementable
+     * @param nombre
+     * @param descripcion
+     * @param precio
+     */
     public Comision(Long idComision,String nombre, String descripcion, int precio) {
         this.idComision = idComision;
         this.nombre = nombre;

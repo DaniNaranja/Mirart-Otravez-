@@ -23,9 +23,19 @@ public class Dibujo {
     @JoinColumn(name= "id_artista")
     private Artista artista;
 
-
+    /**
+     * Constructor vacio a ser utilizado por los controllers
+     */
     public Dibujo() {
     }
+
+    /**
+     * Constructor de la entidad Dibujp
+     * @param id_dibujo
+     * @param titulo
+     * @param descripcion
+     * @param link
+     */
 
     public Dibujo(Long id_dibujo, String titulo, String descripcion, String link) {
         this.id_dibujo = id_dibujo;
@@ -34,6 +44,11 @@ public class Dibujo {
         this.link = link;
     }
 
+    /**
+     * metodo encargado de asignar datos que no son rellenados
+     * inmediatamente en el formulario de registro
+     *
+     */
     @PrePersist
     public void prePersist(){
         artista=null;

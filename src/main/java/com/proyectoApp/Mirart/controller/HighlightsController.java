@@ -18,11 +18,17 @@ public class HighlightsController {
     @Autowired
     private ArtistaRepository artista;
 
+    /**
+     * Metodo encargado de mostrar la vista destacados
+     * @param model libreria proporcionada por Spring para la creacion
+     *               de entidades e insercion de datos a la DB.
+     * @return devuelve la vista destacados
+     */
     @GetMapping("/highlights")
     public String highlights(Model model){
         Iterable<Dibujo> dibujos= dibujoRepository.findAll();
         model.addAttribute("dibujos",dibujos);
-        
+
         return "highlights";
     }
 }

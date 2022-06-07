@@ -8,12 +8,19 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
+
 @Controller
 public class ComisionesController {
 
     @Autowired
     private ComisionRepository comision;
 
+    /**
+     * Metodo encargado de mostrar la vista comisiones
+     * @param model libreria proporcionada por Spring para la creacion
+     *             de entidades e insercion de datos a la DB.
+     * @return devuelve la vista comisiones
+     */
     @GetMapping("/comisiones")
     public String comisiones(Model model){
 

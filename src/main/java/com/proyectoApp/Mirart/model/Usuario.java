@@ -42,9 +42,19 @@ public class Usuario {
     private String descripcion;
 
 
-
+    /**
+     * Constructor vacio a ser utilizado por los Controllers
+     */
     public Usuario() {
     }
+
+    /**
+     * Constructor de la entidad usuario
+     * @param id_usuario
+     * @param nickname
+     * @param email
+     * @param password
+     */
 
     public Usuario(Long id_usuario, String nickname, String email, String password) {
         this.id_usuario = id_usuario;
@@ -52,11 +62,6 @@ public class Usuario {
         this.email = email;
         this.password = password;
 
-    }
-
-    public Usuario(String nickname, String password) {
-        this.nickname = nickname;
-        this.password = password;
     }
 
 

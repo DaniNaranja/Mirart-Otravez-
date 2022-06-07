@@ -18,7 +18,14 @@ public class VisorController {
     @Autowired
     private ArtistaRepository artista;
 
-
+    /**
+     * Metodo encargado de mostrar la vista visor.
+     *
+     * @param model libreria proporcionada por Spring para la creacion
+     *      *               de entidades e insercion de datos a la DB.
+     *
+     * @return lleva a la vista visor.
+     */
     @GetMapping("/visor")
     public String visor(Model model){
         return "visor";

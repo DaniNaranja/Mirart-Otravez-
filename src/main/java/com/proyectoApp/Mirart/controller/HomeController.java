@@ -21,6 +21,14 @@ public class HomeController {
     @Autowired
     private DibujoRepository dibujoRepository;
 
+    /**
+     * metodo encargado de la vista inicio, muestra las cuentas creadas
+     * @param model libreria proporcionada por Spring para la creacion
+     *               de entidades e insercion de datos a la DB.
+     * @param artista clase instanciada para mostrar las cuentas que se
+     *                encuentran en la DB
+     * @return devuelve la vista inicio
+     */
     @GetMapping("/")
     public String index(Model model, Artista artista){
         Iterable<Artista> artistas= artistaRepository.findAll();
