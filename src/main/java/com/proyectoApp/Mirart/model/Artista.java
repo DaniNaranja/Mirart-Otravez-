@@ -10,8 +10,8 @@ public class Artista {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_artista", nullable = false)
-    private Long id_artista;
+    @Column(name = "id", nullable = false)
+    private Long id;
 
     @Column(name = "nickname", nullable = false, length = 50)
     private String nickname;
@@ -40,8 +40,6 @@ public class Artista {
     @Column(name = "link_waitlist", nullable = true, length = 400)
     private String linkWaitlist;
 
-    @Column(name = "verif_acc", nullable = true)
-    private boolean verifAcc;
 
     @Column(name = "terms", nullable = true, length = 600)
     private String terms;
@@ -52,22 +50,26 @@ public class Artista {
     @OneToMany(mappedBy = "artista")
     private Set<Dibujo> dibujos;
 
-    @OneToMany(mappedBy = "artista")
-    private Set<Comision> comisiones;
+
 
     /**
      * Constructor de la entidad artista
      *
-     * @param id_artista id auto incrementable que tambien es PK
+     * @param id id auto incrementable que tambien es PK
      * @param nickname
      * @param email
      * @param password
      */
 
-    public Artista(Long id_artista, String nickname, String email, String password) {
-        this.id_artista = id_artista;
+    public Artista(Long id, String nickname, String email, String password) {
+        this.id = id;
         this.nickname = nickname;
         this.email = email;
+        this.password = password;
+    }
+
+    public Artista(String nickname, String password) {
+        this.nickname = nickname;
         this.password = password;
     }
 
@@ -88,11 +90,11 @@ public class Artista {
         linkIG=null;
         linkFB=null;
         linkTW=null;
-        verifAcc=true;
+
         terms=null;
         descripcion=null;
         dibujos= null;
-        comisiones= null;
+
 
     }
 
@@ -105,13 +107,7 @@ public class Artista {
         this.descripcion = descripcion;
     }
 
-    public Set<Comision> getComisiones() {
-        return comisiones;
-    }
 
-    public void setComisiones(Set<Comision> comisiones) {
-        this.comisiones = comisiones;
-    }
 
     public String getProfilePicture() {
         return profilePicture;
@@ -161,13 +157,6 @@ public class Artista {
         this.linkWaitlist = linkWaitlist;
     }
 
-    public boolean isVerifAcc() {
-        return verifAcc;
-    }
-
-    public void setVerifAcc(boolean verifAcc) {
-        this.verifAcc = verifAcc;
-    }
 
     public String getTerms() {
         return terms;
@@ -185,12 +174,12 @@ public class Artista {
         this.dibujos = dibujos;
     }
 
-    public Long getId_artista() {
-        return id_artista;
+    public Long getId() {
+        return id;
     }
 
-    public void setId_artista(Long id_artista) {
-        this.id_artista = id_artista;
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getNickname() {

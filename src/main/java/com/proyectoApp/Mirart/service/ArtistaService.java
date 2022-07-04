@@ -20,4 +20,9 @@ public class ArtistaService extends GenericService<Artista, Long> {
     public Artista findByNickname(String nickname){
         return ((ArtistaRepository) repository).findByNickname(nickname);
     }
+
+    public Artista findArtistaById(Long id){
+        return ((ArtistaRepository) repository).findArtistaById(id);
+    }
+
 }

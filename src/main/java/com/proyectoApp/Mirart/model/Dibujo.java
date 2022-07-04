@@ -8,7 +8,7 @@ public class Dibujo {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_dibujo", nullable = false)
-    private Long id_dibujo;
+    private Long id;
 
     @Column(name = "titulo", nullable = false, length=100)
     private String titulo;
@@ -20,7 +20,7 @@ public class Dibujo {
     private String link;
 
     @ManyToOne
-    @JoinColumn(name= "id_artista")
+    @JoinColumn(name= "id")
     private Artista artista;
 
     /**
@@ -31,14 +31,14 @@ public class Dibujo {
 
     /**
      * Constructor de la entidad Dibujp
-     * @param id_dibujo
+     * @param id
      * @param titulo
      * @param descripcion
      * @param link
      */
 
-    public Dibujo(Long id_dibujo, String titulo, String descripcion, String link) {
-        this.id_dibujo = id_dibujo;
+    public Dibujo(Long id, String titulo, String descripcion, String link) {
+        this.id = id;
         this.titulo = titulo;
         this.descripcion = descripcion;
         this.link = link;
@@ -55,12 +55,12 @@ public class Dibujo {
 
     }
 
-    public Long getId_dibujo() {
-        return id_dibujo;
+    public Long getId() {
+        return id;
     }
 
-    public void setId_dibujo(Long id_dibujo) {
-        this.id_dibujo = id_dibujo;
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getTitulo() {

@@ -49,7 +49,7 @@ public class RegistroController {
 
     @PostMapping("/form_registro")
     public String registrarUsuario(@ModelAttribute Artista artista, Model model){
-        //artistaRepository.save(artista);
+
         artistaService.save(artista);
 
         return "redirect:/";

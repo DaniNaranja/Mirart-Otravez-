@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -36,11 +36,13 @@
 				
 				<li><a href=""><img class="hamburger-icon" src="img/Menu icon.png" alt=""></a>
 					<ul>
-						<li><a href="/login">Iniciar Sesion</a></li>
-						<li><a href="/registro">Registrarse</a></li>
-						
-							
-						</li>
+                        <li sec:authorize="!isAuthenticated()"><a th:href="@{/login}">Iniciar Sesion</a></li>
+                        <li sec:authorize="!isAuthenticated()"><a href="/registro">Registrarse</a></li>
+                        <li sec:authorize="isAuthenticated()">
+                            <form id="logoutForm" th:action="@{/logout}" method="post">
+                                <button onclick="document.getElementById('logoutForm').submit();" type="submit">Cerrar Sesion</button>
+                            </form>
+                        </li>
 					</ul>
 				</li>
 				
@@ -60,11 +62,11 @@
                 <img src="img/HIGHLIGHTS icon.png" alt="">
             </a>
            
-            <a href="/profile" alt="">
+            <a href="/profile" alt="" sec:authorize="hasRole('ROLE_USER')">
                 <img src="img/PROFILE.png" alt="">
             </a>
 
-            <a href="/submit_drawing" class="active-page">
+            <a href="/submit_drawing" class="active-page" sec:authorize="hasRole('ROLE_USER')">
                 <img src="/img/add ICON.png" alt="">
             </a>
             

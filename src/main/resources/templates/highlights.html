@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -36,8 +36,13 @@
 				
 				<li><a href=""><img class="hamburger-icon" src="img/Menu icon.png" alt=""></a>
 					<ul>
-						<li><a href="/login">Iniciar Sesion</a></li>
-						<li><a href="/registro">Registrarse</a></li>
+                        <li sec:authorize="!isAuthenticated()"><a th:href="@{/login}">Iniciar Sesion</a></li>
+                        <li sec:authorize="!isAuthenticated()"><a href="/registro">Registrarse</a></li>
+                        <li sec:authorize="isAuthenticated()">
+                            <form id="logoutForm" th:action="@{/logout}" method="post">
+                                <button onclick="document.getElementById('logoutForm').submit();" type="submit">Cerrar Sesion</button>
+                            </form>
+                        </li>
 						
 							
 						</li>
@@ -60,11 +65,11 @@
                 <img src="img/HIGHLIGHTS icon.png" alt="">
             </a>
            
-            <a href="/profile">
+            <a href="/profile" sec:authorize="hasRole('ROLE_USER')">
                 <img src="img/PROFILE.png" alt="">
             </a>
             
-            <a href="/submit_drawing" alt="">
+            <a href="/submit_drawing" alt="" sec:authorize="hasRole('ROLE_USER')" >
               <img src="/img/add ICON.png" alt="">
           </a>
             <a href="#" class="sb-faq">
@@ -87,7 +92,7 @@
         <div class="gallery" >
             <div class="row">
                 <div class="column" th:if="${!dibujos.isEmpty()}" th:each=" dibujo :${dibujos}" >
-                    <a th:href="@{/visor(id_dibujo=${dibujo.getId_dibujo()})}">
+                    <a th:href="@{/visor(id_dibujo=${dibujo.getId()})}">
                         <img class="demo cursor" th:src="${dibujo.getLink()}" style="width:100%; padding: 2rem;"  >
                     </a>
                 </div>

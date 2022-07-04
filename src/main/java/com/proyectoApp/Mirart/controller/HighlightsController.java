@@ -4,6 +4,7 @@ import com.proyectoApp.Mirart.model.Artista;
 import com.proyectoApp.Mirart.model.Dibujo;
 import com.proyectoApp.Mirart.repository.ArtistaRepository;
 import com.proyectoApp.Mirart.repository.DibujoRepository;
+import com.proyectoApp.Mirart.service.ArtistaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -16,7 +17,7 @@ public class HighlightsController {
     private DibujoRepository dibujoRepository;
 
     @Autowired
-    private ArtistaRepository artista;
+    private ArtistaService artistaService;
 
     /**
      * Metodo encargado de mostrar la vista destacados
@@ -25,9 +26,11 @@ public class HighlightsController {
      * @return devuelve la vista destacados
      */
     @GetMapping("/highlights")
-    public String highlights(Model model){
-        Iterable<Dibujo> dibujos= dibujoRepository.findAll();
-        model.addAttribute("dibujos",dibujos);
+    public String highlights(Model model) {
+        Iterable<Dibujo> dibujos = dibujoRepository.findAll();
+        model.addAttribute("dibujos", dibujos);
+
+
 
         return "highlights";
     }

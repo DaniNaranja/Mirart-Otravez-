@@ -11,5 +11,10 @@ import java.util.List;
  */
 public interface DibujoRepository extends CrudRepository<Dibujo, Long> {
 
+    Dibujo findDibujoByTitulo(String titulo);
+
+    Dibujo getDibujoById(Long id);
+
+
 
 }
