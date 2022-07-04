@@ -21,8 +21,8 @@ public class ArtistaService extends GenericService<Artista, Long> {
         return ((ArtistaRepository) repository).findByNickname(nickname);
     }
 
-    public Artista findArtistaById(Long id){
-        return ((ArtistaRepository) repository).findArtistaById(id);
+    public Artista getArtistaById(Long id){
+        return ((ArtistaRepository) repository).getArtistaById(id);
     }
 
 }

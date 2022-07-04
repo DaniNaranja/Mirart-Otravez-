@@ -57,10 +57,10 @@
                 <img src="img/HIGHLIGHTS icon.png" alt="">
             </a>
            
-            <a href="/profile" sec:authorize="hasRole('ROLE_USER')">
+            <a href="/profile" sec:authorize="isAuthenticated()">
                 <img src="img/PROFILE.png" alt="">
             </a>
-            <a href="/submit_drawing" alt="" sec:authorize="hasRole('ROLE_USER')">
+            <a href="/submit_drawing" alt="" sec:authorize="isAuthenticated()">
                 <img src="/img/add ICON.png" alt="">
             </a>
             

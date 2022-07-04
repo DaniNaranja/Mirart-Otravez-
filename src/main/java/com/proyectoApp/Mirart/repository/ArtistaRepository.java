@@ -8,7 +8,8 @@ import org.springframework.data.repository.CrudRepository;
  */
 public interface ArtistaRepository extends CrudRepository<Artista, Long> {
 
-    Artista findArtistaById(Long id);
+
+    Artista getArtistaById(Long id);
 
     /**
      * Metodo que busca un usuario segun un nickname en la DB
