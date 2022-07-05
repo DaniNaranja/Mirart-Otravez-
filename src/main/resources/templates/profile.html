@@ -76,12 +76,12 @@
     <section class="content" style="width: auto ;">
         
         <div class="hero-image">
-            <img src="img/fondo.png" style="width: 250rem; height: 50rem; object-fit: cover;">
+            <img th:src="${artista.getBannerPicture()}" style="width: 250rem; height: 50rem; object-fit: cover;">
             <div class="hero-content">
-                <img src="img/PROFILE.png" class="profile-photo" style="border-radius: 200px; height: 350px; width: 350px; vertical-align: middle; margin-left: 3rem;">
+                <img th:src="${artista.getProfilePicture()}" class="profile-photo" style="border-radius: 200px; height: 350px; width: 350px; vertical-align: middle; margin-top: 20%; ">
                 <div class="hero-text" style="vertical-align: middle;">
-                    <h1>Nombre Usuario</h1>
-                    <i>"Hola"</i>
+                    <h1 th:text="${artista.getNickname()}"></h1>
+                    <i th:text="${artista.getTerms()}"></i>
                     
                 </div>
               
@@ -92,52 +92,51 @@
               <p style="color: white; font-size: 30px; margin-left:20px ;">Sobre mi:</p>
  
                 <div class="textbox">
-                    <p class="descripcion" style="width: 1000px; background-color: #271E1E; padding: 3rem; border-radius: 20px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                        Duis scelerisque luctus nisl, non lobortis ante cursus ut. 
-                        Fusce rhoncus, neque in placerat ornare, sapien dolor tincidunt est, ac viverra ex tellus eu dolor. 
-                        Morbi luctus erat sed posuere dignissim. Integer a elit eu est laoreet tristique. Curabitur pretium felis orci, a sodales tortor pretium vitae. 
-                        Nulla luctus dapibus mi, id porttitor urna. Vivamus mollis risus eu lorem interdum tristique. Nam congue diam sit amet ligula tincidunt, eget lobortis sapien ultrices. 
-                        Cras porttitor non odio vitae scelerisque. Vivamus scelerisque mi sit amet aliquet lobortis. In aliquam sem in nulla pharetra, ut semper ligula venenatis. 
-                    </p>
+                    <p class="descripcion" style="width: 1000px; background-color: #271E1E; padding: 3rem; border-radius: 20px;" th:text="${artista.getDescripcion()}"></p>
 
                         <li class="profile-rrss">
                     
-                            <a href="/">
+                            <a th:href="${artista.getLinkIG()}">
                             <img src="img/IG icon.png" style="height: 50px; vertical-align: middle"> 
                             <span>Instagram</span>
                             </a>
                             <br>
                             <br>
-                            <a href="/">
+                            <a th:href="${artista.getLinkTW()}">
                                 <img src="img/TW icon.png" style="height: 50px; vertical-align: middle">
                                 <span>Twitter</span>
                             </a>
                             <br>
                             <br>
                         
-                            <a href="/">
+                            <a th:href="${artista.getLinkFB()}">
                                 <img src="img/FB icon.png" style="height: 70px; vertical-align: middle"> 
                                 <span>Facebook</span> 
                             </a>
                         </li>
-                        <div class="boton" style="margin-left: 15%;">
-                            <a class="b-comision" style="vertical-align: middle;" href="/comisiones">Comisiones</a>
-                        </div>
-                        <div class="boton" style="margin-left: 2rem;">                           
-                            <a class="b-waitlist" style="vertical-align: middle;" href="/">Waitlist</a>
+                        <div class="boton" style="margin-left: 6rem;">
+                            <a class="b-waitlist" style="vertical-align: middle;" th:href="${artista.getLinkWaitlist()}">Waitlist</a>
 
                         </div>
                  </div>
-                     <div class="profile-gallery">
 
-                        <div class="row">
-                          <div class="column">
-                            <a href="/visor">
-                                <img class="demo cursor" src="img/LOGO.png" style="width:100%" >
-                              </a>
-                          </div>
+                <div class="gallery" th:if="${artista.getDibujos().isEmpty()}">
+                    <br>
+                    <br>
+                    <h2 style="color: white; text-align: center; padding: 3%">No se encuentran dibujos.</h2>
+                </div>
+
+                <div class="gallery" >
+                    <div class="row">
+                        <div class="column" th:if="${!artista.getDibujos().isEmpty()}" th:each=" dibujo :${artista.getDibujos()}" >
+                            <a th:href="@{/visor(id_dibujo=${dibujo.getId()})}">
+                                <img class="demo cursor" th:src="${dibujo.getLink()}" style="width:100%; padding: 2rem;"  >
+                            </a>
                         </div>
                     </div>
+                </div>
+
+
      
             </section>
 

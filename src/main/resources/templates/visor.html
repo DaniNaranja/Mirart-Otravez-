@@ -75,27 +75,21 @@
     
     <section class="visor-content" style="width: auto ;">
         <div class="visor-image">
-             <img src="img/LOGO.png" style="width: 50%;" alt=""> 
+             <img th:src="${dibujo.getLink()}" style="width: 50%;" alt="">
 
              <div class="visor-info">
                  <br>
-                <h2 style="color: white; font-size: 50px; margin-left: 5%;">TITULO</h2>
+                <h2 style="color: white; font-size: 50px; margin-left: 5%;" th:text="${dibujo.getTitulo()}"></h2>
                 
                 <br> <br>
                 
-                <a href="/profile">
-                     <img src="img/PROFILE.png" style="vertical-align: middle; margin-left: 5%; width: 8%;">
-                     <span style="margin-left: 2%; font-size: 2.5rem;"> Nombre Usuario</span> 
+                <a th:href="@{/profile(id=${artista.getId()})}">
+                     <img th:src="${dibujo.getArtista().getProfilePicture()}" style="vertical-align: middle; margin-left: 5%; width: 8%;">
+                     <span style="margin-left: 2%; font-size: 2.5rem;" th:text="${dibujo.getArtista().getNickname()}"></span>
                 </a>
                 
                 <div class="desc-dibu" style="margin-top: 5%; margin-left:5%">
-                    <p class="descripcion" style="width: 100rem; height: 45rem;  background-color: #271E1E; padding: 5%">Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                        Duis scelerisque luctus nisl, non lobortis ante cursus ut. 
-                        Fusce rhoncus, neque in placerat ornare, sapien dolor tincidunt est, ac viverra ex tellus eu dolor. 
-                        Morbi luctus erat sed posuere dignissim. Integer a elit eu est laoreet tristique. Curabitur pretium felis orci, a sodales tortor pretium vitae. 
-                        Nulla luctus dapibus mi, id porttitor urna. Vivamus mollis risus eu lorem interdum tristique. Nam congue diam sit amet ligula tincidunt, eget lobortis sapien ultrices. 
-                        Cras porttitor non odio vitae scelerisque. Vivamus scelerisque mi sit amet aliquet lobortis. In aliquam sem in nulla pharetra, ut semper ligula venenatis. 
-                    </p>
+                    <p class="descripcion" style="width: 100rem; height: 45rem;  background-color: #271E1E; padding: 5%" th:text="${dibujo.getDescripcion()}"></p>
                 </div>
             </div>
              

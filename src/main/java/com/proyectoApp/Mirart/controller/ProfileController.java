@@ -9,6 +9,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class ProfileController {
@@ -28,7 +29,9 @@ public class ProfileController {
      * @return devuelve la vista profile
      */
      @GetMapping("/profile")
-    public String profile(Model model){
+    public String profile(@RequestParam(name = "id") Long id, Model model){
+         Artista artista= artistaService.getArtistaById(id);
+         model.addAttribute("artista", artista);
 
         return "profile";
      }
