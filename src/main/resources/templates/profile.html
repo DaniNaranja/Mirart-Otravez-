@@ -79,12 +79,11 @@
             <img th:src="${artista.getBannerPicture()}" style="width: 250rem; height: 50rem; object-fit: cover;">
             <div class="hero-content">
                 <img th:src="${artista.getProfilePicture()}" class="profile-photo" style="border-radius: 200px; height: 350px; width: 350px; vertical-align: middle; margin-top: 20%; ">
-                <div class="hero-text" style="vertical-align: middle;">
-                    <h1 th:text="${artista.getNickname()}"></h1>
-                    <i th:text="${artista.getTerms()}"></i>
-                    
-                </div>
-              
+            </div>
+            <div class="hero-text" style="vertical-align: middle;">
+                <h1 th:text="${artista.getNickname()}"></h1>
+                <i th:text="${artista.getTerms()}"></i>
+
             </div>
           </div>
 

@@ -62,6 +62,8 @@ public class RegistroController {
     public String registrarUsuario(@ModelAttribute Artista artista){
         BCryptPasswordEncoder encoder= new BCryptPasswordEncoder();
         artista.setPassword(encoder.encode(artista.getPassword()));
+        artista.setProfilePicture("https://iili.io/ja7sg1.jpg");
+        artista.setBannerPicture("https://iili.io/ja74sV.png");
 
         artistaService.save(artista);
 
