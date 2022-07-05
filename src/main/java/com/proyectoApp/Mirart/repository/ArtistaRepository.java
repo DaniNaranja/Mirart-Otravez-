@@ -2,11 +2,16 @@ package com.proyectoApp.Mirart.repository;
 
 import com.proyectoApp.Mirart.model.Artista;
 import org.springframework.data.repository.CrudRepository;
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 
 /**
  * Interface que extiende de CrudRepository para manejar datos de la DB
  */
+
+@Repository
 public interface ArtistaRepository extends CrudRepository<Artista, Long> {
+
 
 
     Artista getArtistaById(Long id);

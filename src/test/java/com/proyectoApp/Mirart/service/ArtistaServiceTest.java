@@ -1,22 +1,16 @@
 package com.proyectoApp.Mirart.service;
 
 import com.proyectoApp.Mirart.model.Artista;
-import com.proyectoApp.Mirart.repository.ArtistaRepository;
-import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 
 import org.junit.jupiter.params.ParameterizedTest;
-import org.junit.jupiter.params.provider.MethodSource;
 import org.junit.jupiter.params.provider.ValueSource;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
-import org.springframework.util.Assert;
 
 
 @ExtendWith(SpringExtension.class)

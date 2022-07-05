@@ -1,6 +1,7 @@
 package com.proyectoApp.Mirart.model;
 import javax.persistence.*;
 import javax.persistence.Entity;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
@@ -50,6 +51,11 @@ public class Artista {
     @OneToMany(mappedBy = "artista")
     private Set<Dibujo> dibujos;
 
+    @ManyToMany
+    @JoinTable(name = "artista_role", joinColumns = @JoinColumn(name = "id"), inverseJoinColumns = @JoinColumn(name = "role_id"))
+    private Set<Role> roles;
+
+
 
 
     /**
@@ -90,14 +96,19 @@ public class Artista {
         linkIG=null;
         linkFB=null;
         linkTW=null;
-
         terms=null;
         descripcion=null;
-        dibujos= null;
+        dibujos= new HashSet<Dibujo>();
 
 
     }
 
+    public Artista(String nickname, String email, String password, Set<Role> roles) {
+        this.nickname = nickname;
+        this.email = email;
+        this.password = password;
+        this.roles = roles;
+    }
 
     public String getDescripcion() {
         return descripcion;
@@ -206,6 +217,13 @@ public class Artista {
         this.password = password;
     }
 
+   public Set<Role> getRoles() {
+        return roles;
+    }
+
+    public void setRoles(Set<Role> roles) {
+        this.roles = roles;
+    }
 }
 
 

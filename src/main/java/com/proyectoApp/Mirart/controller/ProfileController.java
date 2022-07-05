@@ -1,8 +1,6 @@
 package com.proyectoApp.Mirart.controller;
 
 import com.proyectoApp.Mirart.model.Artista;
-import com.proyectoApp.Mirart.repository.ArtistaRepository;
-import com.proyectoApp.Mirart.repository.DibujoRepository;
 import com.proyectoApp.Mirart.service.ArtistaService;
 import com.proyectoApp.Mirart.service.DibujoService;
 import org.springframework.beans.factory.annotation.Autowired;
